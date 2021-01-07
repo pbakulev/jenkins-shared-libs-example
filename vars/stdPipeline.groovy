@@ -12,7 +12,7 @@ def call(String buildLine) {
               script{
                 image = readFile "$WORKSPACE\\image"
                 app_name = sh "basename -s .git `git config --get remote.origin.url`"
-                sh "ansible-playbook -i "localhost," /home/vagrant/palybooks/deploy.yaml -e image=$image,app_name=$app_name"
+                sh "ansible-playbook -i \"localhost,\" /home/vagrant/palybooks/deploy.yaml -e image=$image,app_name=$app_name"
           }
         }
       }
